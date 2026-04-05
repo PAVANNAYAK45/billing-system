@@ -19,7 +19,7 @@ It allows users to create, retrieve, and delete invoices with automatic tax calc
 * Java 17
 * Spring Boot
 * Spring Data JPA
-* MySQL
+* PostgreSQL
 * Maven
 * Render (Cloud Deployment)
 
@@ -92,7 +92,7 @@ DELETE /invoice/{id}
 * Controller handles incoming requests
 * Service layer processes business logic (tax calculation)
 * Repository interacts with database
-* Data stored in MySQL
+* Data stored in PostgreSQL
 
 ---
 
