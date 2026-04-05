@@ -19,7 +19,7 @@ public class AiService {
 
             // ✅ Proper JSON body (safe)
             String body = "{\n" +
-                    "  \"model\": \"gpt-3.5-turbo\",\n" +
+                    "  \"model\": \"gpt-4o-mini\",\n" +
                     "  \"messages\": [\n" +
                     "    {\"role\": \"user\", \"content\": \"" + prompt + "\"}\n" +
                     "  ]\n" +
