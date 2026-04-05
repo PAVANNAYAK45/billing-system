@@ -12,9 +12,6 @@ public class InvoiceService {
     @Autowired
     private InvoiceRepository repo;
 
-    @Autowired
-    private AiService aiService;
-
     public List<Invoice> getAllInvoices() {
         return repo.findAll();
     }
@@ -31,14 +28,6 @@ public class InvoiceService {
     double tax = invoice.getAmount() * 0.18;
     invoice.setTax(tax);
     invoice.setTotalAmount(invoice.getAmount() + tax);
-
-    String prompt = "Generate a short summary for invoice of amount "
-            + invoice.getAmount() + " with tax " + tax;
-
-    String aiResponse = aiService.generateSummary(prompt);
-
-     invoice.setAiSummary(aiResponse); // 🔥 important
-
     return repo.save(invoice);
 }
 }
