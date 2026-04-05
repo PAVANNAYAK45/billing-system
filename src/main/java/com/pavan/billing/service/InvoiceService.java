@@ -35,11 +35,9 @@ public class InvoiceService {
     String prompt = "Generate a short summary for invoice of amount "
             + invoice.getAmount() + " with tax " + tax;
 
-    // String aiResponse = aiService.generateSummary(prompt);
+    String aiResponse = aiService.generateSummary(prompt);
 
-    // invoice.setAiSummary(aiResponse); // 🔥 important
-
-    invoice.setAiSummary("AI summary temporarily disabled");
+     invoice.setAiSummary(aiResponse); // 🔥 important
 
     return repo.save(invoice);
 }
