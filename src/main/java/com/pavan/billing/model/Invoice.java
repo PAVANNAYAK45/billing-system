@@ -14,7 +14,6 @@ public class Invoice {
     private double amount;
     private double tax;
     private double totalAmount;
-    private String aiSummary;
 
     public Invoice() {}
 
@@ -37,8 +36,4 @@ public class Invoice {
     public void setTax(double tax) { this.tax = tax; }
 
     public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
-
-    public String getAiSummary() { return aiSummary; }
-
-    public void setAiSummary(String aiSummary) { this.aiSummary = aiSummary; }
 }
