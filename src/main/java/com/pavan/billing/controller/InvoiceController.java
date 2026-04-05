@@ -6,6 +6,8 @@ import java.util.List;
 import com.pavan.billing.model.Invoice;
 import com.pavan.billing.service.InvoiceService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/invoice")
 public class InvoiceController {
@@ -36,5 +38,12 @@ public class InvoiceController {
     public String deleteInvoice(@PathVariable Long id) {
         service.deleteInvoice(id);
         return "Invoice deleted successfully";
+    }
+
+    // UPDATE
+    @PutMapping("/{id}")
+    public Invoice updateInvoice(@PathVariable Long id, @Valid @RequestBody Invoice invoice) {
+        invoice.setId(id);
+        return service.saveInvoice(invoice);
     }
 }
